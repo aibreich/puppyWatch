@@ -507,6 +507,8 @@ main {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  min-height: 44px; /* Touch-friendly minimum height */
+  touch-action: manipulation; /* Optimize for touch */
 }
 
 .btn:hover {
@@ -579,6 +581,7 @@ main {
   color: #2d3748;
   cursor: pointer;
   transition: border-color 0.3s ease;
+  min-height: 44px; /* Touch-friendly minimum height */
 }
 
 .dog-select:focus {
@@ -627,6 +630,7 @@ main {
   border-radius: 10px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  min-height: 44px; /* Touch-friendly minimum height */
 }
 
 .form-group input:focus {
@@ -732,22 +736,56 @@ main {
   .timer-controls {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .btn {
     width: 100%;
     max-width: 200px;
+    padding: 12px;
+    font-size: 16px; /* Prevent zoom on iOS */
   }
 
   .activity-controls {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+  }
+
+  .dog-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .dog-form input,
+  .dog-form select {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 12px;
+  }
+
+  .timer-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .settings-btn {
+    align-self: flex-end;
+  }
+
+  .progress-bar {
+    margin-top: 35px; /* More space for larger dog emoji on mobile */
+  }
+
+  .jumping-dog {
+    font-size: 32px; /* Larger on mobile for better visibility */
+    top: -35px;
   }
 
   /* Mobile hamburger menu adjustments */
   .menu-content {
-    width: 100%;
-    max-width: 350px;
+    width: 95%;
+    max-width: 400px;
   }
 
   .hamburger-btn {
@@ -757,6 +795,103 @@ main {
   .header-content {
     flex-direction: row;
     align-items: center;
+  }
+
+  .timer-card,
+  .dog-info-card,
+  .activity-card {
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .timer-card,
+  .dog-info-card,
+  .activity-card {
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .timer-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .dog-header h2,
+  .activity-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .time-left {
+    font-size: 2.5rem;
+  }
+
+  .timer-status {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .activity-item {
+    padding: 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .activity-actions {
+    align-self: flex-end;
+  }
+
+  .delete-activity {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-content {
+    width: 98%;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
+
+  .timer-card,
+  .dog-info-card,
+  .activity-card {
+    padding: 25px;
+  }
+
+  .dog-form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .activity-controls {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .time-left {
+    font-size: 3.5rem;
   }
 }
 
