@@ -6,7 +6,7 @@ A beautiful and functional web application to help you keep track of your puppy'
 
 ### Getting Started
 
-1. Open `index.html` in your web browser
+1. Open https://aibreich.github.io/puppyWatch/ in your web browser
 2. Allow notifications when prompted (optional but recommended)
 3. Fill in your dog's information and click "Save Information"
 
