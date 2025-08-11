@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puppy Watch 🐕</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+      <div class="menu-overlay" id="menuOverlay"></div>
+      <div class="menu-content">
+        <div class="menu-header">
+          <h3>🐕 Puppy Watch</h3>
+          <button class="close-menu" id="closeMenu">×</button>
+        </div>
+        <div class="menu-section">
+          <h4>Keyboard Shortcuts</h4>
+          <div class="shortcut-item">
+            <span class="shortcut-key">Ctrl/Cmd + Space</span>
+            <span class="shortcut-desc">Start/Pause timer</span>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-key">Ctrl/Cmd + R</span>
+            <span class="shortcut-desc">Reset timer</span>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-key">Ctrl/Cmd + P</span>
+            <span class="shortcut-desc">Log potty break</span>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-key">H</span>
+            <span class="shortcut-desc">Open this menu</span>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-key">Esc</span>
+            <span class="shortcut-desc">Close menu</span>
+          </div>
+        </div>
+        <div class="menu-section">
+          <h4>Features</h4>
+          <ul class="feature-list">
+            <li>⏰ 1-hour potty timer</li>
+            <li>📝 Dog information tracking</li>
+            <li>📊 Activity logging</li>
+            <li>🔔 Desktop notifications</li>
+            <li>💾 Local data storage</li>
+          </ul>
+        </div>
+
+        <div class="menu-section">
+          <h4>Tips</h4>
+          <ul class="tips-list">
+            <li>Allow notifications for timer alerts</li>
+            <li>Log potty breaks to auto-restart timer</li>
+            <li>Data is saved locally in your browser</li>
+            <li>Works offline after initial load</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <div class="header-text">
+            <h1>🐕 Puppy Watch</h1>
+            <p>Keep track of your furry friend's schedule</p>
+          </div>
+          <button class="hamburger-btn" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <!-- Timer Section -->
+        <section class="timer-section">
+          <div class="timer-card">
+            <div class="timer-header">
+              <h2>Potty Timer</h2>
+              <button
+                class="settings-btn"
+                id="timerSettingsBtn"
+                title="Timer Settings"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Timer Settings Panel -->
+            <div class="timer-settings-panel" id="timerSettingsPanel">
+              <div class="settings-header">
+                <h3>Timer Settings</h3>
+                <button class="close-settings" id="closeTimerSettings">
+                  ×
+                </button>
+              </div>
+              <div class="timer-setting">
+                <label for="timerDuration">Timer Duration:</label>
+                <select id="timerDuration" class="timer-select">
+                  <option value="30">30 minutes</option>
+                  <option value="45">45 minutes</option>
+                  <option value="60" selected>1 hour</option>
+                  <option value="90">1.5 hours</option>
+                  <option value="120">2 hours</option>
+                </select>
+              </div>
+              <div class="timer-info">
+                <p>
+                  Current setting: <span id="currentTimerSetting">1 hour</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="timer-display">
+              <div class="time-left" id="timeLeft">01:00:00</div>
+              <div class="timer-status" id="timerStatus">Ready to start</div>
+            </div>
+            <div class="timer-controls">
+              <button class="btn btn-primary" id="startTimer">
+                Start Timer
+              </button>
+              <button class="btn btn-secondary" id="resetTimer">Reset</button>
+              <button
+                class="btn btn-warning"
+                id="pauseTimer"
+                style="display: none"
+              >
+                Pause
+              </button>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progressFill"></div>
+              <div class="jumping-dog" id="jumpingDog">🐕</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dog Information Section -->
+        <section class="dog-info-section">
+          <div class="dog-info-card">
+            <div class="dog-header">
+              <h2>Dog Information</h2>
+            </div>
+            <div class="dog-form">
+              <div class="form-group">
+                <label for="dogName">Dog's Name:</label>
+                <input
+                  type="text"
+                  id="dogName"
+                  placeholder="Enter dog's name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dogBreed">Breed:</label>
+                <input type="text" id="dogBreed" placeholder="Enter breed" />
+              </div>
+              <div class="form-group">
+                <label for="dogAge">Age (months):</label>
+                <input type="number" id="dogAge" placeholder="Enter age" />
+              </div>
+              <div class="form-group">
+                <label for="lastPotty">Last Potty Time:</label>
+                <input type="datetime-local" id="lastPotty" />
+              </div>
+              <div class="dog-actions">
+                <button class="btn btn-success" id="saveDogInfo">
+                  Save Information
+                </button>
+                <button
+                  class="btn btn-danger"
+                  id="deleteDogInfo"
+                  style="display: none"
+                >
+                  Delete Dog
+                </button>
+              </div>
+              <div class="dog-selector">
+                <label for="dogSelector">Select Dog:</label>
+                <select id="dogSelector" class="dog-select">
+                  <option value="new">+ Add New Dog</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Log Section -->
+        <section class="activity-section">
+          <div class="activity-card">
+            <h2>Activity Log</h2>
+            <div class="activity-controls">
+              <button class="btn btn-info" id="logPotty">
+                Log Potty Break
+              </button>
+              <button class="btn btn-info" id="logWalk">Log Walk</button>
+              <button class="btn btn-info" id="logFeeding">Log Feeding</button>
+              <button class="btn btn-info" id="logTreat">Log Treat</button>
+              <button class="btn btn-secondary" id="clearActivities">
+                Clear Activities
+              </button>
+            </div>
+            <div class="activity-meta" id="activityMeta"></div>
+            <div class="activity-list" id="activityList">
+              <div class="no-activities">No activities logged yet</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
